@@ -1,5 +1,9 @@
-function fetchBooks() {
+const gotApi = 'https://anapioficeandfire.com/api/books'
 
+function fetchBooks() {
+  return fetch(gotApi)
+  .then(resp => resp.json())
+  .then(obj => renderBooks(obj))
 }
 
 function renderBooks(json) {
